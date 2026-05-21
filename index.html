@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KisanSeva Portal | किसान सेवा पोर्टल - भारत का #1 कृषि डिजिटल मंच</title>
+  <meta name="description" content="KisanSeva Portal - भारत के किसानों के लिए सम्पूर्ण डिजिटल मंच। मौसम, मंडी भाव, सरकारी योजनाएं, कृषि सलाह, बीज, खाद, उपकरण किराया और बहुत कुछ।" />
+  <meta name="keywords" content="kisan portal, किसान सेवा, mandi bhav, sarkari yojana, krishi, agriculture India, fasal bima, PM Kisan, khet, beej, khad, tractor kiraya" />
+  <meta name="author" content="KisanSeva Portal" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="KisanSeva Portal | किसान सेवा पोर्टल" />
+  <meta property="og:description" content="भारत के किसानों के लिए सम्पूर्ण डिजिटल मंच - मंडी भाव, मौसम, सरकारी योजनाएं और कृषि सलाह" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200" />
+  <meta property="og:url" content="https://kisanseva.gov.in" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="hi_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KisanSeva Portal | किसान सेवा पोर्टल" />
+  <meta name="twitter:description" content="भारत के किसानों के लिए सम्पूर्ण डिजिटल मंच" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --green: #2d7a35;
+      --green-dark: #1a5c22;
+      --green-light: #4caf50;
+      --green-pale: #e8f5e9;
+      --amber: #f59e0b;
+      --amber-dark: #d97706;
+      --amber-pale: #fffbeb;
+      --red: #e53e3e;
+      --sky: #0ea5e9;
+      --bg: #f5f5f0;
+      --card-bg: #ffffff;
+      --text: #1a1a1a;
+      --text-sub: #555;
+      --border: #d4e8c2;
+      --nav-bg: #ffffff;
+      --footer-bg: #1a3a20;
+      --shadow: 0 4px 24px rgba(45,122,53,0.10);
+      --radius: 18px;
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="dark"] {
+      --bg: #0f1a10;
+      --card-bg: #172218;
+      --text: #e8f5e0;
+      --text-sub: #99b89a;
+      --border: #2a4a2c;
+      --nav-bg: #111d12;
+      --green-pale: #1a3020;
+      --amber-pale: #2a2010;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans Devanagari', 'Baloo 2', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .section-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    [data-theme="dark"] .section-title { color: var(--green-light); }
+    .section-sub {
+      text-align: center;
+      color: var(--text-sub);
+      margin-bottom: 50px;
+      font-size: 1.05rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green);
+      border-radius: 50px;
+      padding: 4px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 30px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Baloo 2', sans-serif;
+      transition: all var(--transition);
+    }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,122,53,0.3); }
+    .btn-amber { background: var(--amber); color: #fff; }
+    .btn-amber:hover { background: var(--amber-dark); transform: translateY(-2px); }
+    .btn-outline { background: transparent; border: 2px solid var(--green); color: var(--green); }
+    .btn-outline:hover { background: var(--green); color: #fff; }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(45,122,53,0.18); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    /* ========== NAVBAR ========== */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--nav-bg);
+      border-bottom: 2px solid var(--border);
+      box-shadow: 0 2px 16px rgba(45,122,53,0.08);
+      transition: background var(--transition);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 20px; max-width: 1300px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon {
+      width: 46px; height: 46px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: white;
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-text strong { display: block; font-family: 'Baloo 2'; font-size: 1.25rem; color: var(--green); }
+    .logo-text span { font-size: 0.72rem; color: var(--text-sub); }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 10px;
+      font-weight: 600; font-size: 0.9rem;
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { background: var(--green-pale); color: var(--green); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    #themeToggle {
+      background: var(--green-pale); border: none; cursor: pointer;
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; transition: all var(--transition); color: var(--green);
+    }
+    #themeToggle:hover { background: var(--green); color: white; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--text); }
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--nav-bg); border-bottom: 2px solid var(--border);
+      padding: 16px; z-index: 999;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu li { border-bottom: 1px solid var(--border); }
+    .mobile-menu a { display: block; padding: 12px 8px; font-weight: 600; color: var(--text); }
+
+    /* ========== TICKER ========== */
+    .ticker-bar {
+      background: var(--green-dark); color: white;
+      padding: 8px 0; overflow: hidden; margin-top: 72px;
+    }
+    .ticker-inner { display: flex; align-items: center; gap: 0; }
+    .ticker-label {
+      background: var(--amber); color: white;
+      padding: 2px 16px; font-weight: 700; font-size: 0.82rem;
+      white-space: nowrap; margin-right: 20px; flex-shrink: 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .ticker-track {
+      display: flex; gap: 40px;
+      animation: ticker 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-track span { font-size: 0.85rem; font-weight: 500; }
+    .ticker-track .up { color: #86efac; }
+    .ticker-track .down { color: #fca5a5; }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ========== HERO CAROUSEL ========== */
+    #hero { position: relative; overflow: hidden; }
+    .hero-carousel { position: relative; }
+    .hero-slide {
+      display: none; position: relative;
+      min-height: 92vh;
+      align-items: center;
+    }
+    .hero-slide.active { display: flex; }
+    .hero-slide-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
+    .hero-slide-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 620px; padding: 60px 40px;
+      animation: fadeUp 0.7s ease both;
+    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+    .hero-content .badge { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .hero-content h1 {
+      font-family: 'Baloo 2'; font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800; color: white; line-height: 1.15; margin-bottom: 18px;
+    }
+    .hero-content h1 span { color: #86efac; }
+    .hero-content p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 30px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .carousel-dots {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 10;
+    }
+    .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); border: none; cursor: pointer;
+      transition: all 0.3s; padding: 0;
+    }
+    .dot.active { background: white; width: 28px; border-radius: 6px; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.2); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white; width: 50px; height: 50px; border-radius: 50%;
+      cursor: pointer; font-size: 1.2rem; z-index: 10;
+      transition: all 0.3s; display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-btn:hover { background: var(--green); }
+    .carousel-prev { left: 20px; }
+    .carousel-next { right: 20px; }
+
+    /* ========== STATS ========== */
+    #stats { background: var(--green-dark); padding: 50px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .stat-item { text-align: center; color: white; }
+    .stat-num { font-family: 'Baloo 2'; font-size: 2.8rem; font-weight: 800; color: #86efac; }
+    .stat-label { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
+
+    /* ========== QUICK LINKS ========== */
+    #quick-links { padding: 60px 0; }
+    .quick-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; }
+    .quick-item {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 12px;
+      text-align: center; cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .quick-item:hover { background: var(--green); color: white; transform: translateY(-4px); }
+    .quick-item:hover .quick-icon { background: rgba(255,255,255,0.2); color: white; }
+    .quick-item:hover p { color: white; }
+    .quick-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--green-pale); color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin: 0 auto 12px; transition: all var(--transition);
+    }
+    .quick-item p { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+
+    /* ========== WEATHER ========== */
+    #weather { background: linear-gradient(135deg, #e8f5e9, #f0fdf4); padding: 70px 0; }
+    [data-theme="dark"] #weather { background: linear-gradient(135deg, #0f2010, #0a1a0c); }
+    .weather-card {
+      background: var(--card-bg); border-radius: 24px;
+      padding: 40px; box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .weather-main { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+    .weather-temp { font-family: 'Baloo 2'; font-size: 5rem; font-weight: 800; color: var(--green); line-height: 1; }
+    .weather-info h3 { font-size: 1.4rem; margin-bottom: 6px; }
+    .weather-extras { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 30px; }
+    .weather-extra-item { text-align: center; background: var(--green-pale); border-radius: 14px; padding: 16px 10px; }
+    .weather-extra-item i { font-size: 1.4rem; color: var(--green); margin-bottom: 6px; }
+    .weather-extra-item strong { display: block; font-size: 1.1rem; }
+    .weather-extra-item span { font-size: 0.8rem; color: var(--text-sub); }
+    .weather-forecast { display: flex; gap: 12px; margin-top: 24px; overflow-x: auto; padding-bottom: 8px; }
+    .forecast-day {
+      flex: 0 0 100px; background: var(--green-pale);
+      border-radius: 14px; padding: 14px 10px; text-align: center;
+    }
+    .forecast-day strong { display: block; font-size: 0.85rem; margin-bottom: 6px; }
+    .forecast-day .temp { font-family: 'Baloo 2'; font-weight: 700; font-size: 1.1rem; color: var(--green); }
+
+    /* ========== MANDI BHAV ========== */
+    #mandi { padding: 80px 0; }
+    .mandi-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; justify-content: center; }
+    .mandi-filter-btn {
+      padding: 8px 20px; border-radius: 50px;
+      border: 2px solid var(--border); background: var(--card-bg);
+      color: var(--text); cursor: pointer; font-weight: 600;
+      transition: all var(--transition);
+    }
+    .mandi-filter-btn.active, .mandi-filter-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+    .mandi-table { width: 100%; border-collapse: collapse; }
+    .mandi-table th, .mandi-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .mandi-table th { background: var(--green-pale); color: var(--green-dark); font-weight: 700; font-size: 0.9rem; }
+    .mandi-table tr:hover { background: var(--green-pale); }
+    .price-up { color: #16a34a; font-weight: 700; }
+    .price-down { color: #dc2626; font-weight: 700; }
+    .price-badge { padding: 2px 10px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; }
+    .price-badge.up { background: #dcfce7; color: #16a34a; }
+    .price-badge.down { background: #fee2e2; color: #dc2626; }
+    .table-wrap { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+
+    /* ========== SCHEMES CAROUSEL ========== */
+    #schemes { background: var(--amber-pale); padding: 80px 0; }
+    [data-theme="dark"] #schemes { background: #1a1505; }
+    .schemes-carousel { position: relative; overflow: hidden; }
+    .schemes-track { display: flex; gap: 24px; transition: transform 0.4s ease; }
+    .scheme-card {
+      flex: 0 0 360px; background: var(--card-bg);
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .scheme-card img { width: 100%; height: 200px; object-fit: cover; }
+    .scheme-card-body { padding: 24px; }
+    .scheme-card-body h3 { font-family: 'Baloo 2'; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .scheme-card-body p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 16px; line-height: 1.6; }
+    .scheme-card-body .benefit { background: var(--amber-pale); color: var(--amber-dark); padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 14px; }
+    .schemes-nav { display: flex; gap: 12px; justify-content: center; margin-top: 28px; }
+    .schemes-nav button {
+      width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--amber);
+      background: var(--card-bg); color: var(--amber-dark); cursor: pointer; font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .schemes-nav button:hover { background: var(--amber); color: white; }
+
+    /* ========== PRODUCTS/SHOP ========== */
+    #products { padding: 80px 0; }
+    .product-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(45,122,53,0.18); }
+    .product-img { position: relative; height: 200px; overflow: hidden; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .product-card:hover .product-img img { transform: scale(1.06); }
+    .product-badge-overlay {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--red); color: white;
+      padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+    }
+    .product-body { padding: 18px; }
+    .product-body h4 { font-weight: 700; margin-bottom: 4px; }
+    .product-body .price { font-family: 'Baloo 2'; font-size: 1.3rem; font-weight: 800; color: var(--green); }
+    .product-body .old-price { font-size: 0.9rem; color: var(--text-sub); text-decoration: line-through; margin-left: 6px; }
+    .product-body .rating { color: var(--amber); font-size: 0.85rem; margin: 6px 0; }
+    .add-cart { width: 100%; margin-top: 12px; padding: 10px; border-radius: 12px; background: var(--green-pale); color: var(--green); border: none; cursor: pointer; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
+    .add-cart:hover { background: var(--green); color: white; }
+
+    /* ========== FARM TOOLS RENTAL ========== */
+    #rental { background: var(--green-pale); padding: 80px 0; }
+    [data-theme="dark"] #rental { background: #0f2010; }
+    .rental-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .rental-card img { width: 100%; height: 180px; object-fit: cover; }
+    .rental-body { padding: 18px; }
+    .rental-body h4 { font-weight: 700; margin-bottom: 6px; }
+    .rental-body .rent { color: var(--green); font-weight: 800; font-family: 'Baloo 2'; }
+    .rental-body .available { font-size: 0.8rem; color: #16a34a; font-weight: 600; }
+    .rental-body .btn { margin-top: 12px; width: 100%; justify-content: center; padding: 10px; font-size: 0.9rem; }
+
+    /* ========== EXPERT ADVICE ========== */
+    #experts { padding: 80px 0; }
+    .expert-card {
+      background: var(--card-bg); border-radius: 20px;
+      padding: 28px; border: 1px solid var(--border); box-shadow: var(--shadow);
+      text-align: center; transition: all var(--transition);
+    }
+    .expert-card:hover { transform: translateY(-6px); border-color: var(--green); }
+    .expert-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid var(--green-light); }
+    .expert-card h4 { font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
+    .expert-card .role { color: var(--green); font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
+    .expert-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 16px; }
+    .expert-card .rating { color: var(--amber); font-size: 0.9rem; margin-bottom: 14px; }
+
+    /* ========== FORM SECTIONS ========== */
+    #registration { background: linear-gradient(135deg, #1a5c22, #2d7a35); padding: 80px 0; }
+    .form-card { background: var(--card-bg); border-radius: 24px; padding: 48px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .form-card h2 { font-family: 'Baloo 2'; font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+    .form-card p { color: var(--text-sub); margin-bottom: 32px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1/-1; }
+    .form-group label { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 16px; border-radius: 12px;
+      border: 2px solid var(--border); background: var(--bg);
+      color: var(--text); font-size: 0.95rem; font-family: inherit;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--green);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { margin-top: 28px; width: 100%; padding: 16px; font-size: 1.1rem; border-radius: 14px; }
+    .form-success { display: none; text-align: center; padding: 20px; }
+    .form-success i { font-size: 3rem; color: var(--green); margin-bottom: 12px; }
+
+    /* ========== LOAN CALCULATOR ========== */
+    #loan { background: var(--bg); padding: 80px 0; }
+    .loan-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .loan-form-card { background: var(--card-bg); border-radius: 24px; padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .loan-result-card { background: var(--green-dark); border-radius: 24px; padding: 36px; color: white; }
+    .loan-result-card h3 { font-family: 'Baloo 2'; font-size: 1.4rem; margin-bottom: 24px; }
+    .result-item { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .result-item span { opacity: 0.8; }
+    .result-item strong { font-family: 'Baloo 2'; font-size: 1.1rem; color: #86efac; }
+    .range-input { width: 100%; accent-color: var(--green); }
+
+    /* ========== CROP GUIDE ========== */
+    #crops { background: var(--green-pale); padding: 80px 0; }
+    [data-theme="dark"] #crops { background: #0f2010; }
+    .crop-card {
+      background: var(--card-bg); border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .crop-card img { width: 100%; height: 160px; object-fit: cover; }
+    .crop-card-body { padding: 18px; }
+    .crop-card-body h4 { font-weight: 700; margin-bottom: 8px; }
+    .crop-tag { background: var(--green-pale); color: var(--green); padding: 2px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin: 2px; }
+    .crop-card-body p { font-size: 0.85rem; color: var(--text-sub); margin-top: 8px; line-height: 1.5; }
+
+    /* ========== NEWS ========== */
+    #news { padding: 80px 0; }
+    .news-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .news-card img { width: 100%; height: 190px; object-fit: cover; }
+    .news-card-body { padding: 20px; }
+    .news-cat { font-size: 0.75rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .news-card-body h4 { font-weight: 700; font-size: 1rem; line-height: 1.4; margin-bottom: 8px; }
+    .news-card-body p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
+    .news-meta { display: flex; align-items: center; gap: 12px; margin-top: 14px; font-size: 0.8rem; color: var(--text-sub); }
+
+    /* ========== TESTIMONIALS ========== */
+    #testimonials { background: var(--amber-pale); padding: 80px 0; }
+    [data-theme="dark"] #testimonials { background: #1a1505; }
+    .testimonials-slider { position: relative; overflow: hidden; }
+    .testimonials-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
+    .testi-card {
+      flex: 0 0 380px; background: var(--card-bg);
+      border-radius: 20px; padding: 30px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      position: relative;
+    }
+    .testi-card::before {
+      content: '"'; font-family: Georgia; font-size: 5rem;
+      position: absolute; top: -10px; left: 20px;
+      color: var(--green-light); opacity: 0.3; line-height: 1;
+    }
+    .testi-card p { font-size: 0.95rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 20px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-author img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--green-light); }
+    .testi-author strong { display: block; font-weight: 700; }
+    .testi-author span { font-size: 0.8rem; color: var(--text-sub); }
+    .testi-rating { color: var(--amber); font-size: 0.85rem; margin-top: 4px; }
+
+    /* ========== CONTACT FORM ========== */
+    #contact { background: var(--bg); padding: 80px 0; }
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-info h2 { font-family: 'Baloo 2'; font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 16px; }
+    .contact-info p { color: var(--text-sub); line-height: 1.7; margin-bottom: 30px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+    .contact-item-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--green-pale); color: var(--green);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-item strong { display: block; font-weight: 700; margin-bottom: 2px; }
+    .contact-item span { font-size: 0.9rem; color: var(--text-sub); }
+    .social-links { display: flex; gap: 12px; margin-top: 24px; }
+    .social-link {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--green-pale); color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; transition: all 0.3s;
+    }
+    .social-link:hover { background: var(--green); color: white; }
+    .contact-form-card { background: var(--card-bg); border-radius: 24px; padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .contact-form-card h3 { font-family: 'Baloo 2'; font-size: 1.4rem; font-weight: 700; margin-bottom: 24px; color: var(--green); }
+
+    /* ========== FAQ ========== */
+    #faq { background: var(--green-pale); padding: 80px 0; }
+    [data-theme="dark"] #faq { background: #0f2010; }
+    .faq-item { background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border); margin-bottom: 12px; overflow: hidden; }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; background: none; border: none; cursor: pointer;
+      font-weight: 700; font-size: 0.98rem; color: var(--text); text-align: left;
+      font-family: inherit;
+    }
+    .faq-q:hover { background: var(--green-pale); }
+    .faq-q i { color: var(--green); transition: transform 0.3s; }
+    .faq-q.open i { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 22px 18px; color: var(--text-sub); font-size: 0.92rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    /* ========== HELPLINE ========== */
+    #helpline { background: var(--green-dark); padding: 60px 0; }
+    .helpline-wrap { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+    .helpline-text h2 { font-family: 'Baloo 2'; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 8px; }
+    .helpline-text p { color: rgba(255,255,255,0.8); max-width: 500px; }
+    .helpline-number { font-family: 'Baloo 2'; font-size: 3rem; font-weight: 800; color: #86efac; }
+    .helpline-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 20px; }
+
+    /* ========== APP DOWNLOAD ========== */
+    #app { padding: 80px 0; }
+    .app-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .app-text h2 { font-family: 'Baloo 2'; font-size: 2.2rem; font-weight: 800; color: var(--green); margin-bottom: 16px; }
+    .app-text p { color: var(--text-sub); line-height: 1.7; margin-bottom: 28px; }
+    .app-features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+    .app-feature { display: flex; align-items: center; gap: 14px; }
+    .app-feature-icon { width: 40px; height: 40px; border-radius: 12px; background: var(--green-pale); color: var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .app-feature p { margin: 0; font-size: 0.92rem; }
+    .app-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .app-btn { display: flex; align-items: center; gap: 12px; background: #1a1a1a; color: white; border-radius: 14px; padding: 12px 20px; font-size: 0.9rem; transition: all 0.3s; }
+    .app-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .app-btn i { font-size: 1.6rem; }
+    .app-btn-text small { display: block; font-size: 0.7rem; opacity: 0.7; }
+    .app-btn-text strong { display: block; font-size: 1rem; }
+    .app-mockup { position: relative; display: flex; justify-content: center; }
+    .app-mockup img { max-height: 520px; border-radius: 30px; box-shadow: 0 30px 80px rgba(45,122,53,0.3); }
+
+    /* ========== GALLERY ========== */
+    #gallery { background: var(--bg); padding: 80px 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 16px;
+    }
+    .gallery-item { border-radius: 16px; overflow: hidden; cursor: pointer; position: relative; }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.4);
+      opacity: 0; transition: 0.3s; display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay i { font-size: 2rem; color: white; }
+
+    /* ========== PARTNERS ========== */
+    #partners { padding: 60px 0; border-top: 1px solid var(--border); }
+    .partners-track { display: flex; gap: 50px; align-items: center; animation: scroll 20s linear infinite; }
+    .partner-logo {
+      flex-shrink: 0; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 28px;
+      font-weight: 800; font-size: 1rem; color: var(--text-sub);
+      white-space: nowrap;
+    }
+    @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .partners-overflow { overflow: hidden; }
+
+    /* ========== FOOTER ========== */
+    #footer { background: var(--footer-bg); color: rgba(255,255,255,0.85); padding: 70px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+    .footer-brand p { margin: 16px 0; font-size: 0.9rem; line-height: 1.7; opacity: 0.8; }
+    .footer-col h4 { color: white; font-weight: 700; margin-bottom: 18px; font-size: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.88rem; opacity: 0.75; transition: opacity 0.2s; }
+    .footer-col ul li a:hover { opacity: 1; color: #86efac; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; }
+    .footer-bottom p { font-size: 0.85rem; opacity: 0.7; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.82rem; opacity: 0.6; }
+    .footer-bottom-links a:hover { opacity: 1; }
+
+    /* ========== MODALS ========== */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7); z-index: 2000;
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--card-bg); border-radius: 24px; padding: 40px;
+      max-width: 500px; width: 90%; position: relative;
+      animation: fadeUp 0.3s ease;
+    }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: var(--green-pale); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1rem; color: var(--green); }
+
+    /* ========== SCROLL TO TOP ========== */
+    #scrollTop {
+      position: fixed; bottom: 30px; right: 30px; z-index: 500;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); color: white; border: none; cursor: pointer;
+      font-size: 1.2rem; box-shadow: 0 4px 20px rgba(45,122,53,0.4);
+      display: none; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    #scrollTop.visible { display: flex; }
+    #scrollTop:hover { background: var(--green-dark); transform: translateY(-3px); }
+
+    /* ========== TOAST ========== */
+    .toast {
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+      background: var(--green-dark); color: white;
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 600; z-index: 3000;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      animation: toastIn 0.3s ease; display: flex; align-items: center; gap: 10px;
+    }
+    @keyframes toastIn { from{opacity:0;transform:translateX(-50%) translateY(20px)} to{opacity:1;transform:translateX(-50%) translateY(0)} }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .quick-grid { grid-template-columns: repeat(3,1fr); }
+      .grid-4 { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .hero-content { padding: 40px 20px; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .quick-grid { grid-template-columns: repeat(3,1fr); }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .loan-wrap, .contact-wrap, .app-wrap { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .weather-extras { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .helpline-wrap { flex-direction: column; text-align: center; }
+      .section { padding: 60px 0; }
+    }
+    @media (max-width: 480px) {
+      .quick-grid { grid-template-columns: repeat(2,1fr); }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 1.8rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🌾</div>
+      <div class="logo-text">
+        <strong>KisanSeva</strong>
+        <span>किसान सेवा पोर्टल</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">होम</a></li>
+      <li><a href="#mandi">मंडी भाव</a></li>
+      <li><a href="#schemes">योजनाएं</a></li>
+      <li><a href="#products">उत्पाद</a></li>
+      <li><a href="#crops">फसल गाइड</a></li>
+      <li><a href="#experts">विशेषज्ञ</a></li>
+      <li><a href="#loan">ऋण कैलकुलेटर</a></li>
+      <li><a href="#news">समाचार</a></li>
+      <li><a href="#contact">संपर्क</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="themeToggle" aria-label="Toggle Theme"><i class="fa fa-moon"></i></button>
+      <button class="btn btn-primary" onclick="openModal('loginModal')" style="padding:10px 20px;font-size:0.9rem;">
+        <i class="fa fa-user"></i> लॉग इन
+      </button>
+      <button class="hamburger" id="menuBtn" aria-label="Menu"><i class="fa fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero" onclick="closeMobileMenu()">🏠 होम</a></li>
+    <li><a href="#mandi" onclick="closeMobileMenu()">📊 मंडी भाव</a></li>
+    <li><a href="#schemes" onclick="closeMobileMenu()">📋 सरकारी योजनाएं</a></li>
+    <li><a href="#products" onclick="closeMobileMenu()">🛒 उत्पाद दुकान</a></li>
+    <li><a href="#rental" onclick="closeMobileMenu()">🚜 उपकरण किराया</a></li>
+    <li><a href="#crops" onclick="closeMobileMenu()">🌱 फसल गाइड</a></li>
+    <li><a href="#experts" onclick="closeMobileMenu()">👨‍🌾 विशेषज्ञ</a></li>
+    <li><a href="#loan" onclick="closeMobileMenu()">🏦 ऋण कैलकुलेटर</a></li>
+    <li><a href="#weather" onclick="closeMobileMenu()">⛅ मौसम</a></li>
+    <li><a href="#news" onclick="closeMobileMenu()">📰 समाचार</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">📞 संपर्क</a></li>
+  </ul>
+</div>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker-bar">
+  <div class="container">
+    <div class="ticker-inner">
+      <div class="ticker-label">🔴 LIVE मंडी भाव</div>
+      <div class="ticker-track" id="ticker">
+        <span>गेहूं <strong class="up">₹2,215/क्विंटल ▲</strong></span>
+        <span>धान <strong class="up">₹1,940/क्विंटल ▲</strong></span>
+        <span>सोयाबीन <strong class="down">₹4,820/क्विंटल ▼</strong></span>
+        <span>मक्का <strong class="up">₹1,780/क्विंटल ▲</strong></span>
+        <span>कपास <strong class="up">₹6,340/क्विंटल ▲</strong></span>
+        <span>प्याज <strong class="down">₹1,250/क्विंटल ▼</strong></span>
+        <span>आलू <strong class="up">₹890/क्विंटल ▲</strong></span>
+        <span>सरसों <strong class="up">₹5,680/क्विंटल ▲</strong></span>
+        <span>मूंगफली <strong class="down">₹5,200/क्विंटल ▼</strong></span>
+        <span>चना <strong class="up">₹4,950/क्विंटल ▲</strong></span>
+        <!-- duplicate for loop -->
+        <span>गेहूं <strong class="up">₹2,215/क्विंटल ▲</strong></span>
+        <span>धान <strong class="up">₹1,940/क्विंटल ▲</strong></span>
+        <span>सोयाबीन <strong class="down">₹4,820/क्विंटल ▼</strong></span>
+        <span>मक्का <strong class="up">₹1,780/क्विंटल ▲</strong></span>
+        <span>कपास <strong class="up">₹6,340/क्विंटल ▲</strong></span>
+        <span>प्याज <strong class="down">₹1,250/क्विंटल ▼</strong></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO CAROUSEL ===== -->
+<section id="hero">
+  <div class="hero-carousel">
+    <div class="hero-slide active">
+      <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1400&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">🇮🇳 भारत का #1 कृषि पोर्टल</span>
+          <h1>किसान का <span>डिजिटल साथी</span> — हर समस्या का हल</h1>
+          <p>मंडी भाव, मौसम, सरकारी योजनाएं, कृषि सलाह और बहुत कुछ — सब एक जगह पर।</p>
+          <div class="hero-btns">
+            <a href="#registration" class="btn btn-primary"><i class="fa fa-user-plus"></i> अभी पंजीकरण करें</a>
+            <a href="#schemes" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4)"><i class="fa fa-info-circle"></i> योजनाएं देखें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">📊 आज के मंडी भाव</span>
+          <h1>सही कीमत पाएं, <span>सही फैसला लें</span></h1>
+          <p>राज्य की सभी मंडियों के लाइव भाव देखें और अपनी फसल की सही कीमत जानें।</p>
+          <div class="hero-btns">
+            <a href="#mandi" class="btn btn-primary"><i class="fa fa-chart-line"></i> मंडी भाव देखें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1400&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">🌤️ मौसम अलर्ट</span>
+          <h1>मौसम की <span>सटीक जानकारी</span> से फसल बचाएं</h1>
+          <p>7 दिन का मौसम पूर्वानुमान, बारिश अलर्ट और फसल सुरक्षा सलाह — बिल्कुल मुफ्त।</p>
+          <div class="hero-btns">
+            <a href="#weather" class="btn btn-primary"><i class="fa fa-cloud-sun"></i> मौसम जांचें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">💰 PM किसान</span>
+          <h1>सरकारी <span>योजनाओं का लाभ</span> उठाएं</h1>
+          <p>PM किसान, फसल बीमा, KCC और 50+ योजनाओं के लिए ऑनलाइन आवेदन करें।</p>
+          <div class="hero-btns">
+            <a href="#schemes" class="btn btn-primary"><i class="fa fa-file-alt"></i> आवेदन करें</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-btn carousel-prev" onclick="prevSlide()"><i class="fa fa-chevron-left"></i></button>
+    <button class="carousel-btn carousel-next" onclick="nextSlide()"><i class="fa fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="heroDots"></div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num" data-count="12">0</div><div class="stat-label">+ करोड़ किसान पंजीकृत</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="2847">0</div><div class="stat-label">+ मंडियों से लाइव भाव</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="58">0</div><div class="stat-label">+ सरकारी योजनाएं</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="500">0</div><div class="stat-label">+ कृषि विशेषज्ञ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK LINKS ===== -->
+<section id="quick-links">
+  <div class="container">
+    <div class="badge">⚡ त्वरित सेवाएं</div>
+    <h2 class="section-title">क्या खोज रहे हैं आप?</h2>
+    <p class="section-sub">अपनी जरूरत के अनुसार सेवा चुनें</p>
+    <div class="quick-grid">
+      <div class="quick-item" onclick="scrollTo('#mandi')">
+        <div class="quick-icon"><i class="fa fa-chart-line"></i></div>
+        <p>मंडी भाव</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#weather')">
+        <div class="quick-icon"><i class="fa fa-cloud-sun"></i></div>
+        <p>मौसम अलर्ट</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#schemes')">
+        <div class="quick-icon"><i class="fa fa-landmark"></i></div>
+        <p>सरकारी योजनाएं</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#loan')">
+        <div class="quick-icon"><i class="fa fa-calculator"></i></div>
+        <p>ऋण कैलकुलेटर</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#products')">
+        <div class="quick-icon"><i class="fa fa-shopping-cart"></i></div>
+        <p>बीज / खाद खरीदें</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#rental')">
+        <div class="quick-icon"><i class="fa fa-tractor"></i></div>
+        <p>ट्रैक्टर किराया</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#crops')">
+        <div class="quick-icon"><i class="fa fa-seedling"></i></div>
+        <p>फसल गाइड</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#experts')">
+        <div class="quick-icon"><i class="fa fa-user-tie"></i></div>
+        <p>विशेषज्ञ से पूछें</p>
+      </div>
+      <div class="quick-item" onclick="openModal('insuranceModal')">
+        <div class="quick-icon"><i class="fa fa-shield-alt"></i></div>
+        <p>फसल बीमा</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#news')">
+        <div class="quick-icon"><i class="fa fa-newspaper"></i></div>
+        <p>कृषि समाचार</p>
+      </div>
+      <div class="quick-item" onclick="openModal('soilModal')">
+        <div class="quick-icon"><i class="fa fa-flask"></i></div>
+        <p>मिट्टी परीक्षण</p>
+      </div>
+      <div class="quick-item" onclick="scrollTo('#contact')">
+        <div class="quick-icon"><i class="fa fa-headset"></i></div>
+        <p>हेल्पलाइन</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WEATHER ===== -->
+<section id="weather">
+  <div class="container">
+    <div class="badge">🌤️ मौसम सेवा</div>
+    <h2 class="section-title">आपके क्षेत्र का मौसम</h2>
+    <p class="section-sub">फसल के अनुसार मौसम की योजना बनाएं</p>
+    <div class="weather-card">
+      <div class="weather-main">
+        <div>
+          <div class="weather-temp">34°C</div>
+          <div style="font-size:0.9rem;color:var(--text-sub);margin-top:4px;">जयपुर, राजस्थान</div>
+        </div>
+        <div class="weather-info">
+          <h3>⛅ आंशिक बादल</h3>
+          <p style="color:var(--text-sub);margin:6px 0;">अधिकतम 38°C / न्यूनतम 26°C</p>
+          <p style="color:var(--green);font-weight:600;">⚠️ कृषि सलाह: आज सिंचाई न करें, कल बारिश संभव</p>
+        </div>
+        <div style="font-size:4rem;margin-left:auto">⛅</div>
+      </div>
+      <div class="weather-extras">
+        <div class="weather-extra-item"><i class="fa fa-tint"></i><strong>65%</strong><span>नमी</span></div>
+        <div class="weather-extra-item"><i class="fa fa-wind"></i><strong>18 km/h</strong><span>हवा</span></div>
+        <div class="weather-extra-item"><i class="fa fa-eye"></i><strong>10 km</strong><span>दृश्यता</span></div>
+        <div class="weather-extra-item"><i class="fa fa-cloud-rain"></i><strong>40%</strong><span>बारिश संभावना</span></div>
+      </div>
+      <h4 style="margin:24px 0 14px;font-size:1rem;">📅 7 दिन का पूर्वानुमान</h4>
+      <div class="weather-forecast">
+        <div class="forecast-day"><strong>सोम</strong><div>⛅</div><div class="temp">34°</div></div>
+        <div class="forecast-day"><strong>मंगल</strong><div>🌧️</div><div class="temp">29°</div></div>
+        <div class="forecast-day"><strong>बुध</strong><div>🌩️</div><div class="temp">27°</div></div>
+        <div class="forecast-day"><strong>गुरु</strong><div>⛅</div><div class="temp">32°</div></div>
+        <div class="forecast-day"><strong>शुक्र</strong><div>☀️</div><div class="temp">36°</div></div>
+        <div class="forecast-day"><strong>शनि</strong><div>☀️</div><div class="temp">38°</div></div>
+        <div class="forecast-day"><strong>रवि</strong><div>⛅</div><div class="temp">35°</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANDI BHAV ===== -->
+<section id="mandi">
+  <div class="container">
+    <div class="badge">📊 लाइव डेटा</div>
+    <h2 class="section-title">आज के मंडी भाव</h2>
+    <p class="section-sub">सभी प्रमुख मंडियों के ताजा भाव — <span style="color:var(--green)">प्रतिदिन अपडेट</span></p>
+    <div class="mandi-filters">
+      <button class="mandi-filter-btn active" onclick="filterMandi('सभी',this)">सभी</button>
+      <button class="mandi-filter-btn" onclick="filterMandi('अनाज',this)">🌾 अनाज</button>
+      <button class="mandi-filter-btn" onclick="filterMandi('दलहन',this)">🫘 दलहन</button>
+      <button class="mandi-filter-btn" onclick="filterMandi('तिलहन',this)">🌻 तिलहन</button>
+      <button class="mandi-filter-btn" onclick="filterMandi('सब्जी',this)">🥦 सब्जी</button>
+      <button class="mandi-filter-btn" onclick="filterMandi('फल',this)">🍎 फल</button>
+    </div>
+    <div class="table-wrap">
+      <table class="mandi-table" id="mandiTable">
+        <thead><tr><th>फसल</th><th>श्रेणी</th><th>मंडी</th><th>MSP ₹</th><th>बाजार भाव ₹</th><th>परिवर्तन</th><th>गुणवत्ता</th></tr></thead>
+        <tbody id="mandiBody">
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <button class="btn btn-primary" onclick="showToast('📊 सभी मंडियों का डेटा लोड हो रहा है...')"><i class="fa fa-sync"></i> और देखें</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEMES CAROUSEL ===== -->
+<section id="schemes">
+  <div class="container">
+    <div class="badge">🏛️ सरकारी योजनाएं</div>
+    <h2 class="section-title">किसानों के लिए सरकारी योजनाएं</h2>
+    <p class="section-sub">इन योजनाओं का लाभ उठाएं और अपनी आय बढ़ाएं</p>
+    <div class="schemes-carousel">
+      <div class="schemes-track" id="schemesTrack">
+        <div class="scheme-card">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&auto=format&fit=crop" alt="PM Kisan" />
+          <div class="scheme-card-body">
+            <h3>PM किसान सम्मान निधि</h3>
+            <div class="benefit">₹6,000/वर्ष</div>
+            <p>सभी किसान परिवारों को प्रतिवर्ष ₹6,000 की आर्थिक सहायता तीन किस्तों में।</p>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:0.88rem;" onclick="openModal('schemeModal')"><i class="fa fa-file-alt"></i> आवेदन करें</button>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&auto=format&fit=crop" alt="Crop Insurance" />
+          <div class="scheme-card-body">
+            <h3>प्रधानमंत्री फसल बीमा योजना</h3>
+            <div class="benefit">सिर्फ 2% प्रीमियम</div>
+            <p>खरीफ फसलों के लिए 2% और रबी फसलों के लिए 1.5% प्रीमियम पर पूर्ण बीमा।</p>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:0.88rem;" onclick="openModal('schemeModal')"><i class="fa fa-shield-alt"></i> बीमा लें</button>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&auto=format&fit=crop" alt="KCC" />
+          <div class="scheme-card-body">
+            <h3>किसान क्रेडिट कार्ड (KCC)</h3>
+            <div class="benefit">4% ब्याज दर</div>
+            <p>किसानों को खेती के खर्च के लिए सस्ती दर पर ऋण। 3 लाख तक बिना गारंटी।</p>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:0.88rem;" onclick="openModal('kccModal')"><i class="fa fa-credit-card"></i> KCC लें</button>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=400&auto=format&fit=crop" alt="Irrigation" />
+          <div class="scheme-card-body">
+            <h3>PM कृषि सिंचाई योजना</h3>
+            <div class="benefit">75% सब्सिडी</div>
+            <p>ड्रिप और स्प्रिंकलर सिंचाई के लिए 75% तक की सरकारी सब्सिडी।</p>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:0.88rem;" onclick="openModal('schemeModal')"><i class="fa fa-tint"></i> सब्सिडी लें</button>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&auto=format&fit=crop" alt="e-NAM" />
+          <div class="scheme-card-body">
+            <h3>e-NAM पोर्टल</h3>
+            <div class="benefit">ऑनलाइन बिक्री</div>
+            <p>राष्ट्रीय कृषि बाजार पर फसल सीधे ऑनलाइन बेचें और बेहतर कीमत पाएं।</p>
+            <button class="btn btn-primary" style="padding:10px 20px;font-size:0.88rem;" onclick="openModal('schemeModal')"><i class="fa fa-store"></i> बेचें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="schemes-nav">
+      <button onclick="slidePrev('schemesTrack')"><i class="fa fa-chevron-left"></i></button>
+      <button onclick="slideNext('schemesTrack', 360)"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products">
+  <div class="container">
+    <div class="badge">🛒 कृषि बाजार</div>
+    <h2 class="section-title">बीज, खाद और कृषि उत्पाद</h2>
+    <p class="section-sub">प्रमाणित और उच्च गुणवत्ता के कृषि उत्पाद — सीधे आपके दरवाजे तक</p>
+    <div class="grid-4" id="productsGrid">
+      <div class="product-card">
+        <div class="product-img"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&auto=format&fit=crop" alt="गेहूं के बीज"/><div class="product-badge-overlay">नया</div></div>
+        <div class="product-body"><h4>HD-2967 गेहूं बीज</h4><div class="rating">★★★★★ (4.8)</div><div><span class="price">₹1,450</span><span class="old-price">₹1,800</span></div><p style="font-size:0.8rem;color:var(--text-sub);margin-top:4px;">40 किग्रा / उच्च उत्पादन</p><button class="add-cart" onclick="addToCart('HD-2967 गेहूं बीज')"><i class="fa fa-cart-plus"></i> कार्ट में जोड़ें</button></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=400&auto=format&fit=crop" alt="यूरिया"/></div>
+        <div class="product-body"><h4>यूरिया खाद (45 किग्रा)</h4><div class="rating">★★★★☆ (4.5)</div><div><span class="price">₹266</span><span class="old-price">₹300</span></div><p style="font-size:0.8rem;color:var(--text-sub);margin-top:4px;">सरकारी नियंत्रित मूल्य</p><button class="add-cart" onclick="addToCart('यूरिया खाद')"><i class="fa fa-cart-plus"></i> कार्ट में जोड़ें</button></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=400&auto=format&fit=crop" alt="ड्रिप"/><div class="product-badge-overlay">बेस्ट सेलर</div></div>
+        <div class="product-body"><h4>ड्रिप इरीगेशन किट</h4><div class="rating">★★★★★ (4.9)</div><div><span class="price">₹4,200</span><span class="old-price">₹6,000</span></div><p style="font-size:0.8rem;color:var(--text-sub);margin-top:4px;">1 एकड़ के लिए पूरा सेट</p><button class="add-cart" onclick="addToCart('ड्रिप इरीगेशन किट')"><i class="fa fa-cart-plus"></i> कार्ट में जोड़ें</button></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&auto=format&fit=crop" alt="कीटनाशक"/></div>
+        <div class="product-body"><h4>जैविक कीटनाशक</h4><div class="rating">★★★★☆ (4.3)</div><div><span class="price">₹380</span><span class="old-price">₹450</span></div><p style="font-size:0.8rem;color:var(--text-sub);margin-top:4px;">500ml / पर्यावरण सुरक्षित</p><button class="add-cart" onclick="addToCart('जैविक कीटनाशक')"><i class="fa fa-cart-plus"></i> कार्ट में जोड़ें</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RENTAL ===== -->
+<section id="rental">
+  <div class="container">
+    <div class="badge">🚜 उपकरण किराया</div>
+    <h2 class="section-title">कृषि उपकरण किराये पर लें</h2>
+    <p class="section-sub">महंगे उपकरण खरीदने की जरूरत नहीं — किराये पर लें और खर्च बचाएं</p>
+    <div class="grid-4">
+      <div class="rental-card">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&auto=format&fit=crop" alt="ट्रैक्टर" />
+        <div class="rental-body">
+          <h4>🚜 ट्रैक्टर 50HP</h4>
+          <p class="available">✅ उपलब्ध है</p>
+          <div class="rent">₹800/घंटा</div>
+          <p style="font-size:0.82rem;color:var(--text-sub);margin-top:6px;">John Deere 5050D • मालिक: रामलाल जी</p>
+          <button class="btn btn-primary" onclick="bookRental('ट्रैक्टर 50HP')">बुकिंग करें</button>
+        </div>
+      </div>
+      <div class="rental-card">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&auto=format&fit=crop" alt="कंबाइन" />
+        <div class="rental-body">
+          <h4>🌾 कंबाइन हार्वेस्टर</h4>
+          <p class="available">✅ उपलब्ध है</p>
+          <div class="rent">₹1,500/घंटा</div>
+          <p style="font-size:0.82rem;color:var(--text-sub);margin-top:6px;">Claas 4000 • मालिक: सुरेश पटेल</p>
+          <button class="btn btn-primary" onclick="bookRental('कंबाइन हार्वेस्टर')">बुकिंग करें</button>
+        </div>
+      </div>
+      <div class="rental-card">
+        <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?w=400&auto=format&fit=crop" alt="रोटावेटर" />
+        <div class="rental-body">
+          <h4>⚙️ रोटावेटर</h4>
+          <p style="color:var(--amber-dark);font-size:0.8rem;font-weight:600;">⏳ 2 दिन में उपलब्ध</p>
+          <div class="rent">₹400/घंटा</div>
+          <p style="font-size:0.82rem;color:var(--text-sub);margin-top:6px;">Sonalika RT-165 • मालिक: हरीश यादव</p>
+          <button class="btn btn-outline" onclick="bookRental('रोटावेटर')">वेटिंग लिस्ट</button>
+        </div>
+      </div>
+      <div class="rental-card">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&auto=format&fit=crop" alt="ड्रोन" />
+        <div class="rental-body">
+          <h4>🚁 कृषि ड्रोन</h4>
+          <p class="available">✅ उपलब्ध है</p>
+          <div class="rent">₹2,000/एकड़</div>
+          <p style="font-size:0.82rem;color:var(--text-sub);margin-top:6px;">DJI Agras • कीटनाशक छिड़काव</p>
+          <button class="btn btn-primary" onclick="bookRental('कृषि ड्रोन')">बुकिंग करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CROP GUIDE ===== -->
+<section id="crops">
+  <div class="container">
+    <div class="badge">🌱 फसल मार्गदर्शन</div>
+    <h2 class="section-title">फसल उगाने की पूरी जानकारी</h2>
+    <p class="section-sub">विशेषज्ञों द्वारा तैयार फसल-दर-फसल मार्गदर्शिका</p>
+    <div class="grid-4">
+      <div class="crop-card">
+        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=200&auto=format&fit=crop" alt="गेहूं" />
+        <div class="crop-card-body">
+          <h4>🌾 गेहूं</h4>
+          <div><span class="crop-tag">रबी</span><span class="crop-tag">Oct-Nov बुवाई</span><span class="crop-tag">Mar-Apr कटाई</span></div>
+          <p>HD-2967 और PBW-343 किस्में सबसे लोकप्रिय। प्रति एकड़ 18-22 क्विंटल उत्पादन।</p>
+          <button class="btn btn-outline" style="margin-top:10px;padding:8px 18px;font-size:0.85rem" onclick="showToast('गेहूं गाइड खुल रही है...')">पूरी जानकारी</button>
+        </div>
+      </div>
+      <div class="crop-card">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=200&auto=format&fit=crop" alt="धान" />
+        <div class="crop-card-body">
+          <h4>🌾 धान (चावल)</h4>
+          <div><span class="crop-tag">खरीफ</span><span class="crop-tag">Jun-Jul बुवाई</span><span class="crop-tag">Oct-Nov कटाई</span></div>
+          <p>Punjab 11 और Swarna किस्में। सिंचित क्षेत्र में 25-30 क्विंटल/एकड़ संभव।</p>
+          <button class="btn btn-outline" style="margin-top:10px;padding:8px 18px;font-size:0.85rem" onclick="showToast('धान गाइड खुल रही है...')">पूरी जानकारी</button>
+        </div>
+      </div>
+      <div class="crop-card">
+        <img src="https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?w=400&h=200&auto=format&fit=crop" alt="सोयाबीन" />
+        <div class="crop-card-body">
+          <h4>🫘 सोयाबीन</h4>
+          <div><span class="crop-tag">खरीफ</span><span class="crop-tag">Jun-Jul बुवाई</span><span class="crop-tag">Sep-Oct कटाई</span></div>
+          <p>JS-335 सबसे प्रचलित किस्म। प्रति एकड़ 10-14 क्विंटल उत्पादन, उच्च बाजार मांग।</p>
+          <button class="btn btn-outline" style="margin-top:10px;padding:8px 18px;font-size:0.85rem" onclick="showToast('सोयाबीन गाइड खुल रही है...')">पूरी जानकारी</button>
+        </div>
+      </div>
+      <div class="crop-card">
+        <img src="https://images.unsplash.com/photo-1508002366005-75a695ee2d17?w=400&h=200&auto=format&fit=crop" alt="मक्का" />
+        <div class="crop-card-body">
+          <h4>🌽 मक्का</h4>
+          <div><span class="crop-tag">खरीफ/रबी</span><span class="crop-tag">दोनों मौसम</span></div>
+          <p>DKC-9108 हाइब्रिड किस्म सर्वश्रेष्ठ। प्रति एकड़ 25-35 क्विंटल तक उत्पादन।</p>
+          <button class="btn btn-outline" style="margin-top:10px;padding:8px 18px;font-size:0.85rem" onclick="showToast('मक्का गाइड खुल रही है...')">पूरी जानकारी</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERTS ===== -->
+<section id="experts">
+  <div class="container">
+    <div class="badge">👨‍🌾 विशेषज्ञ पैनल</div>
+    <h2 class="section-title">कृषि विशेषज्ञों से सलाह लें</h2>
+    <p class="section-sub">अनुभवी कृषि वैज्ञानिक और विशेषज्ञ — आपकी समस्या का हल</p>
+    <div class="grid-4">
+      <div class="expert-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&auto=format&fit=crop&q=80" class="expert-avatar" alt="Dr. Ramesh" />
+        <h4>डॉ. रमेश शर्मा</h4>
+        <div class="role">मृदा विज्ञानी</div>
+        <div class="rating">★★★★★ 4.9 (234 समीक्षाएं)</div>
+        <p>20 वर्ष का अनुभव। मिट्टी परीक्षण, उर्वरक प्रबंधन और जैविक खेती में विशेषज्ञ।</p>
+        <button class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem" onclick="openModal('consultModal')"><i class="fa fa-video"></i> परामर्श लें</button>
+      </div>
+      <div class="expert-card">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&auto=format&fit=crop&q=80" class="expert-avatar" alt="Dr. Priya" />
+        <h4>डॉ. प्रिया वर्मा</h4>
+        <div class="role">फसल रोग विशेषज्ञ</div>
+        <div class="rating">★★★★★ 4.8 (187 समीक्षाएं)</div>
+        <p>पौधों के रोग, कीट नियंत्रण और जैविक खेती में PhD। IARI से प्रशिक्षित।</p>
+        <button class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem" onclick="openModal('consultModal')"><i class="fa fa-video"></i> परामर्श लें</button>
+      </div>
+      <div class="expert-card">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&auto=format&fit=crop&q=80" class="expert-avatar" alt="Suresh" />
+        <h4>सुरेश पाटीदार</h4>
+        <div class="role">सिंचाई विशेषज्ञ</div>
+        <div class="rating">★★★★☆ 4.7 (156 समीक्षाएं)</div>
+        <p>ड्रिप सिंचाई, वाटर मैनेजमेंट और स्प्रिंकलर सिस्टम में 15 साल का अनुभव।</p>
+        <button class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem" onclick="openModal('consultModal')"><i class="fa fa-video"></i> परामर्श लें</button>
+      </div>
+      <div class="expert-card">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&auto=format&fit=crop&q=80" class="expert-avatar" alt="Anita" />
+        <h4>अनीता देवी</h4>
+        <div class="role">जैविक खेती विशेषज्ञ</div>
+        <div class="rating">★★★★★ 4.9 (298 समीक्षाएं)</div>
+        <p>जैविक खेती, वर्मीकंपोस्ट और प्राकृतिक कीटनाशक निर्माण में विशेषज्ञता।</p>
+        <button class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem" onclick="openModal('consultModal')"><i class="fa fa-video"></i> परामर्श लें</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REGISTRATION FORM ===== -->
+<section id="registration">
+  <div class="container">
+    <div class="form-card" id="regFormCard">
+      <span class="badge">✍️ मुफ्त पंजीकरण</span>
+      <h2>किसान पंजीकरण करें</h2>
+      <p>पंजीकृत किसानों को PM किसान, फसल बीमा और सभी सुविधाएं मिलती हैं।</p>
+      <div class="form-grid">
+        <div class="form-group"><label>पूरा नाम *</label><input type="text" placeholder="आपका पूरा नाम" required /></div>
+        <div class="form-group"><label>मोबाइल नंबर *</label><input type="tel" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10" required /></div>
+        <div class="form-group"><label>आधार नंबर *</label><input type="text" placeholder="12 अंकों का आधार नंबर" maxlength="12" required /></div>
+        <div class="form-group"><label>राज्य *</label>
+          <select>
+            <option value="">राज्य चुनें</option>
+            <option>राजस्थान</option><option>उत्तर प्रदेश</option><option>मध्य प्रदेश</option><option>पंजाब</option><option>हरियाणा</option><option>महाराष्ट्र</option><option>गुजरात</option><option>बिहार</option>
+          </select>
+        </div>
+        <div class="form-group"><label>जिला *</label><input type="text" placeholder="आपका जिला" required /></div>
+        <div class="form-group"><label>गांव/पिनकोड *</label><input type="text" placeholder="गांव का नाम या पिनकोड" required /></div>
+        <div class="form-group"><label>भूमि (एकड़ में)</label><input type="number" placeholder="0.5" min="0" step="0.1" /></div>
+        <div class="form-group"><label>मुख्य फसल</label>
+          <select>
+            <option value="">फसल चुनें</option>
+            <option>गेहूं</option><option>धान</option><option>मक्का</option><option>सोयाबीन</option><option>कपास</option><option>सरसों</option><option>गन्ना</option>
+          </select>
+        </div>
+        <div class="form-group full"><label>बैंक खाता नंबर</label><input type="text" placeholder="PM किसान लाभ के लिए" /></div>
+        <div class="form-group full"><label>अतिरिक्त जानकारी</label><textarea placeholder="अपनी खेती की समस्याएं या जरूरतें बताएं..."></textarea></div>
+      </div>
+      <button class="btn btn-primary form-submit" onclick="submitRegForm()"><i class="fa fa-check-circle"></i> पंजीकरण पूरा करें</button>
+    </div>
+    <div class="form-success" id="regSuccess">
+      <i class="fa fa-check-circle"></i>
+      <h3 style="font-size:1.5rem;margin-bottom:8px;color:var(--green)">✅ पंजीकरण सफल!</h3>
+      <p style="color:var(--text-sub)">आपका पंजीकरण सफलतापूर्वक हो गया है। SMS के माध्यम से आपको पुष्टि मिलेगी।</p>
+      <button class="btn btn-primary" style="margin-top:20px" onclick="resetRegForm()">वापस जाएं</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOAN CALCULATOR ===== -->
+<section id="loan">
+  <div class="container">
+    <div class="badge">🏦 ऋण सुविधा</div>
+    <h2 class="section-title">कृषि ऋण कैलकुलेटर</h2>
+    <p class="section-sub">अपनी ऋण की EMI और कुल राशि जानें</p>
+    <div class="loan-wrap">
+      <div class="loan-form-card">
+        <h3 style="font-family:'Baloo 2';color:var(--green);margin-bottom:24px;">📊 ऋण विवरण भरें</h3>
+        <div class="form-group" style="margin-bottom:20px">
+          <label>ऋण राशि: ₹<span id="loanAmtLabel">1,00,000</span></label>
+          <input type="range" class="range-input" id="loanAmt" min="10000" max="1000000" step="5000" value="100000" oninput="calcLoan()" />
+          <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--text-sub);margin-top:4px"><span>₹10,000</span><span>₹10,00,000</span></div>
+        </div>
+        <div class="form-group" style="margin-bottom:20px">
+          <label>ब्याज दर: <span id="rateLabel">7</span>% प्रतिवर्ष</label>
+          <input type="range" class="range-input" id="loanRate" min="4" max="18" step="0.5" value="7" oninput="calcLoan()" />
+          <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--text-sub);margin-top:4px"><span>4% (KCC)</span><span>18%</span></div>
+        </div>
+        <div class="form-group">
+          <label>अवधि: <span id="tenureLabel">36</span> महीने</label>
+          <input type="range" class="range-input" id="loanTenure" min="6" max="120" step="6" value="36" oninput="calcLoan()" />
+          <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--text-sub);margin-top:4px"><span>6 महीने</span><span>10 साल</span></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:24px;width:100%" onclick="openModal('loanApplyModal')"><i class="fa fa-paper-plane"></i> ऋण के लिए आवेदन करें</button>
+      </div>
+      <div class="loan-result-card">
+        <h3>📋 ऋण सारांश</h3>
+        <div class="result-item"><span>मासिक EMI</span><strong id="emi">₹3,089</strong></div>
+        <div class="result-item"><span>कुल ब्याज</span><strong id="totalInt">₹11,201</strong></div>
+        <div class="result-item"><span>कुल भुगतान</span><strong id="totalPay">₹1,11,201</strong></div>
+        <div class="result-item"><span>ऋण अवधि</span><strong id="tenureDisp">36 महीने</strong></div>
+        <div style="margin-top:28px;background:rgba(255,255,255,0.1);border-radius:14px;padding:16px">
+          <p style="font-size:0.85rem;opacity:0.9">💡 <strong>KCC (किसान क्रेडिट कार्ड)</strong> पर केवल 4% ब्याज दर पर 3 लाख तक का ऋण पाएं। आज ही आवेदन करें!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section id="news">
+  <div class="container">
+    <div class="badge">📰 कृषि समाचार</div>
+    <h2 class="section-title">ताजा कृषि समाचार</h2>
+    <p class="section-sub">खेती-किसानी से जुड़ी हर खबर — एक जगह</p>
+    <div class="grid-3">
+      <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=500&auto=format&fit=crop" alt="news1" />
+        <div class="news-card-body">
+          <div class="news-cat">सरकारी नीति</div>
+          <h4>PM किसान की 18वीं किस्त जारी — 9 करोड़ किसानों के खाते में पैसे</h4>
+          <p>केंद्र सरकार ने PM किसान योजना की 18वीं किस्त सीधे बैंक खातों में भेजी...</p>
+          <div class="news-meta"><i class="fa fa-calendar"></i> 15 मई 2026 <i class="fa fa-eye"></i> 45,230 बार पढ़ा</div>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&auto=format&fit=crop" alt="news2" />
+        <div class="news-card-body">
+          <div class="news-cat">मौसम</div>
+          <h4>इस साल मानसून जल्दी आएगा — IMD का अनुमान, किसानों की खुशी</h4>
+          <p>मौसम विभाग ने बताया कि इस बार मानसून 5 दिन पहले पहुंच सकता है...</p>
+          <div class="news-meta"><i class="fa fa-calendar"></i> 14 मई 2026 <i class="fa fa-eye"></i> 38,100 बार पढ़ा</div>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&auto=format&fit=crop" alt="news3" />
+        <div class="news-card-body">
+          <div class="news-cat">बाजार</div>
+          <h4>गेहूं का MSP ₹2,275 प्रति क्विंटल घोषित — किसानों को बड़ी राहत</h4>
+          <p>सरकार ने रबी सीजन 2026-27 के लिए गेहूं का न्यूनतम समर्थन मूल्य बढ़ाया...</p>
+          <div class="news-meta"><i class="fa fa-calendar"></i> 13 मई 2026 <i class="fa fa-eye"></i> 67,450 बार पढ़ा</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="badge">💬 किसानों की आवाज</div>
+    <h2 class="section-title">किसान भाइयों के अनुभव</h2>
+    <p class="section-sub">हमारे पोर्टल ने जिनकी जिंदगी बदली</p>
+    <div class="testimonials-slider">
+      <div class="testimonials-track" id="testiTrack">
+        <div class="testi-card">
+          <p>इस पोर्टल से मुझे सही समय पर मंडी भाव मिला और मैंने अपनी सोयाबीन की फसल ₹800 ज्यादा प्रति क्विंटल पर बेची। पिछले साल से ₹40,000 की अतिरिक्त आमदनी हुई।</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&fit=crop" alt="Farmer" />
+            <div><strong>रामप्रसाद गुप्ता</strong><span>मध्य प्रदेश, 12 एकड़</span><div class="testi-rating">★★★★★</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>PM किसान की किस्त कब आएगी, कौनसी योजना के लिए आवेदन करें — सब जानकारी इस पोर्टल पर मिलती है। KCC लोन भी यहीं से लिया, बहुत आसान था।</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&auto=format&fit=crop" alt="Farmer" />
+            <div><strong>सुखदेव सिंह</strong><span>पंजाब, 8 एकड़</span><div class="testi-rating">★★★★★</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>डॉ. रमेश जी से वीडियो कॉल पर सलाह ली तो पता चला मेरी फसल में कौन सी बीमारी है। उनकी दी हुई दवाई से 3 दिन में फसल ठीक हो गई।</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&auto=format&fit=crop" alt="Farmer" />
+            <div><strong>शिवराम पटेल</strong><span>गुजरात, 5 एकड़</span><div class="testi-rating">★★★★★</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>ट्रैक्टर किराये की सुविधा बहुत अच्छी है। खुद ट्रैक्टर खरीदने की जरूरत नहीं पड़ी। हर साल ₹80,000 की बचत हो रही है।</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&auto=format&fit=crop" alt="Farmer" />
+            <div><strong>मोहन लाल यादव</strong><span>उत्तर प्रदेश, 6 एकड़</span><div class="testi-rating">★★★★☆</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>मौसम की सही जानकारी से मैंने सही समय पर बुवाई की और इस बार गेहूं की रिकॉर्ड 24 क्विंटल प्रति एकड़ उपज मिली। बहुत उपयोगी पोर्टल है।</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&auto=format&fit=crop" alt="Farmer" />
+            <div><strong>धर्मपाल कुमार</strong><span>हरियाणा, 15 एकड़</span><div class="testi-rating">★★★★★</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="schemes-nav" style="margin-top:24px">
+      <button onclick="slidePrev('testiTrack')"><i class="fa fa-chevron-left"></i></button>
+      <button onclick="slideNext('testiTrack', 380)"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="container">
+    <div class="badge">📸 फोटो गैलरी</div>
+    <h2 class="section-title">हमारे किसान, हमारी पहचान</h2>
+    <p class="section-sub">देश के विभिन्न राज्यों के किसान और उनकी खेती</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop" alt="farm"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&auto=format&fit=crop" alt="harvest"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&auto=format&fit=crop" alt="crops"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&auto=format&fit=crop" alt="green fields"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&auto=format&fit=crop" alt="seeds"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&auto=format&fit=crop" alt="irrigation"/><div class="gallery-overlay"><i class="fa fa-search-plus"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="badge">📞 हमसे संपर्क करें</div>
+    <h2 class="section-title">हम आपकी मदद के लिए तैयार हैं</h2>
+    <p class="section-sub">किसी भी समस्या के लिए हमसे संपर्क करें</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h2>बात करें हमसे</h2>
+        <p>हमारी टीम सोमवार से शनिवार, सुबह 8 बजे से शाम 8 बजे तक आपकी सेवा में उपलब्ध है।</p>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-phone"></i></div>
+          <div><strong>किसान हेल्पलाइन</strong><span>1800-180-1551 (टोल फ्री)</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+          <div><strong>ईमेल सहायता</strong><span>help@kisanseva.gov.in</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div><strong>मुख्य कार्यालय</strong><span>कृषि भवन, नई दिल्ली - 110001</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+          <div><strong>WhatsApp सेवा</strong><span>+91-7599-177-177</span></div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <h3>✉️ संदेश भेजें</h3>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="form-group"><label>आपका नाम</label><input type="text" placeholder="पूरा नाम" /></div>
+          <div class="form-group"><label>मोबाइल नंबर</label><input type="tel" placeholder="+91 XXXXXXXXXX" /></div>
+          <div class="form-group"><label>विषय</label>
+            <select>
+              <option>योजना की जानकारी</option>
+              <option>मंडी भाव की समस्या</option>
+              <option>तकनीकी सहायता</option>
+              <option>शिकायत</option>
+              <option>अन्य</option>
+            </select>
+          </div>
+          <div class="form-group"><label>संदेश</label><textarea rows="4" placeholder="अपनी समस्या या सुझाव लिखें..."></textarea></div>
+          <button class="btn btn-primary" onclick="showToast('✅ संदेश सफलतापूर्वक भेजा गया!')"><i class="fa fa-paper-plane"></i> संदेश भेजें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="badge">❓ अक्सर पूछे जाने वाले सवाल</div>
+    <h2 class="section-title">आपके सवाल, हमारे जवाब</h2>
+    <p class="section-sub" style="margin-bottom:40px">किसानों के सबसे आम सवालों के जवाब</p>
+    <div style="max-width:800px;margin:0 auto">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">PM किसान की राशि कब और कैसे मिलती है? <i class="fa fa-chevron-down"></i></button><div class="faq-a">PM किसान योजना के तहत प्रति वर्ष ₹6,000 की राशि तीन समान किस्तों (₹2,000 प्रत्येक) में सीधे बैंक खाते में भेजी जाती है। अप्रैल-जुलाई, अगस्त-नवंबर और दिसंबर-मार्च की अवधि में किस्त आती है।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">फसल बीमा के लिए कैसे आवेदन करें? <i class="fa fa-chevron-down"></i></button><div class="faq-a">प्रधानमंत्री फसल बीमा योजना के लिए आप इस पोर्टल पर, किसी भी बैंक शाखा या CSC सेंटर पर जाकर आवेदन कर सकते हैं। खरीफ के लिए 31 जुलाई और रबी के लिए 31 दिसंबर अंतिम तिथि होती है।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">KCC (किसान क्रेडिट कार्ड) कैसे मिलेगा? <i class="fa fa-chevron-down"></i></button><div class="faq-a">KCC के लिए नजदीकी बैंक शाखा या इस पोर्टल के माध्यम से आवेदन करें। आधार कार्ड, जमीन के कागजात और बैंक पासबुक चाहिए। अधिकतम 3 लाख तक 4% ब्याज दर पर मिलता है।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">मंडी में फसल बेचने के लिए क्या चाहिए? <i class="fa fa-chevron-down"></i></button><div class="faq-a">मंडी में फसल बेचने के लिए किसान पंजीकरण कार्ड, आधार कार्ड और बैंक पासबुक की जरूरत होती है। e-NAM पोर्टल के माध्यम से ऑनलाइन भी बेच सकते हैं।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">मिट्टी परीक्षण कहां और कैसे कराएं? <i class="fa fa-chevron-down"></i></button><div class="faq-a">नजदीकी कृषि विभाग कार्यालय या CSC सेंटर पर मिट्टी का नमूना दें। सरकारी प्रयोगशाला में मुफ्त में परीक्षण होता है और Soil Health Card मिलता है।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">ट्रैक्टर किराये की बुकिंग कैसे करें? <i class="fa fa-chevron-down"></i></button><div class="faq-a">इस पोर्टल पर 'उपकरण किराया' सेक्शन में जाकर अपने क्षेत्र में उपलब्ध ट्रैक्टर देखें। तिथि और समय चुनें और ऑनलाइन बुकिंग करें। मालिक से सीधे संपर्क हो जाएगा।</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HELPLINE ===== -->
+<section id="helpline">
+  <div class="container">
+    <div class="helpline-wrap">
+      <div class="helpline-text">
+        <h2>🆘 किसान हेल्पलाइन</h2>
+        <p>किसी भी समस्या के लिए — मौसम, बीमा, लोन, मंडी — हमारे विशेषज्ञ 24x7 उपलब्ध हैं।</p>
+        <div class="helpline-btns">
+          <a href="tel:18001801551" class="btn btn-primary"><i class="fa fa-phone"></i> अभी कॉल करें</a>
+          <a href="#" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.3)" onclick="showToast('WhatsApp खुल रहा है...')"><i class="fab fa-whatsapp"></i> WhatsApp करें</a>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div class="helpline-number">1800-180-1551</div>
+        <div style="color:rgba(255,255,255,0.7);margin-top:8px">टोल फ्री • 24x7 • हिंदी में</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APP DOWNLOAD ===== -->
+<section id="app">
+  <div class="container">
+    <div class="app-wrap">
+      <div class="app-text">
+        <div class="badge">📱 मोबाइल ऐप</div>
+        <h2>KisanSeva ऐप डाउनलोड करें</h2>
+        <p>अब आपके स्मार्टफोन में पूरा कृषि पोर्टल। मंडी भाव, मौसम, योजनाएं — सब कुछ एक टैप पर।</p>
+        <div class="app-features">
+          <div class="app-feature"><div class="app-feature-icon"><i class="fa fa-bell"></i></div><p><strong>लाइव अलर्ट:</strong> मंडी भाव बदलने पर तुरंत नोटिफिकेशन</p></div>
+          <div class="app-feature"><div class="app-feature-icon"><i class="fa fa-wifi"></i></div><p><strong>ऑफलाइन मोड:</strong> इंटरनेट के बिना भी काम करे</p></div>
+          <div class="app-feature"><div class="app-feature-icon"><i class="fa fa-microphone"></i></div><p><strong>आवाज से पूछें:</strong> हिंदी में बोलकर सवाल करें</p></div>
+          <div class="app-feature"><div class="app-feature-icon"><i class="fa fa-language"></i></div><p><strong>12 भाषाएं:</strong> हिंदी, पंजाबी, मराठी और अधिक</p></div>
+        </div>
+        <div class="app-btns">
+          <a href="#" class="app-btn" onclick="showToast('Google Play Store खुल रहा है...')">
+            <i class="fab fa-google-play"></i>
+            <div class="app-btn-text"><small>GET IT ON</small><strong>Google Play</strong></div>
+          </a>
+          <a href="#" class="app-btn" onclick="showToast('App Store खुल रहा है...')">
+            <i class="fab fa-apple"></i>
+            <div class="app-btn-text"><small>Download on the</small><strong>App Store</strong></div>
+          </a>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <img src="https://images.unsplash.com/photo-1512941937938-a272e704d771?w=400&auto=format&fit=crop" alt="Mobile App" style="border-radius:30px;max-width:340px" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section id="partners">
+  <div class="container">
+    <h3 style="text-align:center;color:var(--text-sub);font-size:0.95rem;margin-bottom:30px;font-weight:600">हमारे सरकारी और संस्थागत भागीदार</h3>
+    <div class="partners-overflow">
+      <div class="partners-track">
+        <div class="partner-logo">🏛️ कृषि मंत्रालय</div>
+        <div class="partner-logo">🌾 IARI नई दिल्ली</div>
+        <div class="partner-logo">🏦 SBI Bank</div>
+        <div class="partner-logo">🌱 NABARD</div>
+        <div class="partner-logo">📊 e-NAM</div>
+        <div class="partner-logo">🚜 Mahindra</div>
+        <div class="partner-logo">🌿 ICAR</div>
+        <div class="partner-logo">💧 NWDA</div>
+        <div class="partner-logo">🏛️ कृषि मंत्रालय</div>
+        <div class="partner-logo">🌾 IARI नई दिल्ली</div>
+        <div class="partner-logo">🏦 SBI Bank</div>
+        <div class="partner-logo">🌱 NABARD</div>
+        <div class="partner-logo">📊 e-NAM</div>
+        <div class="partner-logo">🚜 Mahindra</div>
+        <div class="partner-logo">🌿 ICAR</div>
+        <div class="partner-logo">💧 NWDA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:16px">
+          <div class="logo-icon">🌾</div>
+          <div class="logo-text">
+            <strong style="color:white">KisanSeva</strong>
+            <span style="color:rgba(255,255,255,0.6)">किसान सेवा पोर्टल</span>
+          </div>
+        </div>
+        <p>भारत सरकार, कृषि एवं किसान कल्याण मंत्रालय द्वारा संचालित। देश के 12 करोड़ से अधिक किसानों की डिजिटल सेवा में समर्पित।</p>
+        <div class="social-links" style="margin-top:20px">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>मुख्य सेवाएं</h4>
+        <ul>
+          <li><a href="#mandi">मंडी भाव</a></li>
+          <li><a href="#weather">मौसम अलर्ट</a></li>
+          <li><a href="#schemes">सरकारी योजनाएं</a></li>
+          <li><a href="#loan">ऋण कैलकुलेटर</a></li>
+          <li><a href="#products">कृषि बाजार</a></li>
+          <li><a href="#rental">उपकरण किराया</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>जानकारी</h4>
+        <ul>
+          <li><a href="#crops">फसल गाइड</a></li>
+          <li><a href="#experts">विशेषज्ञ सलाह</a></li>
+          <li><a href="#news">कृषि समाचार</a></li>
+          <li><a href="#faq">सवाल-जवाब</a></li>
+          <li><a href="#gallery">फोटो गैलरी</a></li>
+          <li><a href="#app">मोबाइल ऐप</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>सहायता</h4>
+        <ul>
+          <li><a href="#contact">हमसे संपर्क करें</a></li>
+          <li><a href="#helpline">किसान हेल्पलाइन</a></li>
+          <li><a href="#" onclick="openModal('privacyModal')">गोपनीयता नीति</a></li>
+          <li><a href="#" onclick="openModal('termsModal')">उपयोग की शर्तें</a></li>
+          <li><a href="#registration">पंजीकरण</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KisanSeva Portal | भारत सरकार, कृषि मंत्रालय | सभी अधिकार सुरक्षित</p>
+      <div class="footer-bottom-links">
+        <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>
+        <a href="#" onclick="openModal('termsModal')">Terms of Use</a>
+        <a href="#contact">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODALS ===== -->
+<!-- Login Modal -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('loginModal')"><i class="fa fa-times"></i></button>
+    <div class="badge">🔐 सुरक्षित लॉगिन</div>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.8rem;margin-bottom:20px">किसान लॉगिन</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="form-group"><label>मोबाइल नंबर</label><input type="tel" placeholder="+91 XXXXXXXXXX" /></div>
+      <div class="form-group"><label>पासवर्ड</label><input type="password" placeholder="••••••••" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('loginModal');showToast('✅ लॉगिन सफल!')"><i class="fa fa-sign-in-alt"></i> लॉगिन करें</button>
+      <button class="btn btn-outline" style="width:100%;padding:14px" onclick="closeModal('loginModal');showToast('OTP भेजा जा रहा है...')"><i class="fa fa-mobile-alt"></i> OTP से लॉगिन</button>
+      <p style="text-align:center;font-size:0.88rem;color:var(--text-sub)">नए किसान? <a href="#registration" onclick="closeModal('loginModal')" style="color:var(--green);font-weight:700">अभी पंजीकरण करें</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Scheme Apply Modal -->
+<div class="modal-overlay" id="schemeModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('schemeModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">📋 योजना आवेदन</h2>
+    <p style="color:var(--text-sub);margin-bottom:20px">नीचे विवरण भरें और सबमिट करें।</p>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>आधार नंबर</label><input type="text" placeholder="12 अंकों का आधार" /></div>
+      <div class="form-group"><label>बैंक खाता</label><input type="text" placeholder="बैंक खाता नंबर" /></div>
+      <div class="form-group"><label>जमीन (एकड़)</label><input type="number" placeholder="जमीन का क्षेत्रफल" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('schemeModal');showToast('✅ आवेदन सफलतापूर्वक भेजा गया!')"><i class="fa fa-check"></i> आवेदन करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Consultant Modal -->
+<div class="modal-overlay" id="consultModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('consultModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">👨‍💼 परामर्श बुकिंग</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>परामर्श का विषय</label>
+        <select><option>फसल रोग</option><option>मिट्टी परीक्षण</option><option>सिंचाई</option><option>जैविक खेती</option><option>अन्य</option></select>
+      </div>
+      <div class="form-group"><label>पसंदीदा तिथि</label><input type="date" /></div>
+      <div class="form-group"><label>पसंदीदा समय</label><input type="time" /></div>
+      <div class="form-group"><label>समस्या का विवरण</label><textarea rows="3" placeholder="अपनी समस्या लिखें..."></textarea></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('consultModal');showToast('✅ परामर्श बुकिंग हो गई! SMS आएगा।')"><i class="fa fa-video"></i> बुकिंग करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Insurance Modal -->
+<div class="modal-overlay" id="insuranceModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('insuranceModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">🛡️ फसल बीमा आवेदन</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>फसल का प्रकार</label><select><option>गेहूं</option><option>धान</option><option>सोयाबीन</option><option>कपास</option><option>मक्का</option></select></div>
+      <div class="form-group"><label>बीमित क्षेत्र (एकड़)</label><input type="number" placeholder="0.5" /></div>
+      <div class="form-group"><label>बुवाई की तिथि</label><input type="date" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('insuranceModal');showToast('✅ बीमा आवेदन सफल!')"><i class="fa fa-shield-alt"></i> बीमा करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Soil Modal -->
+<div class="modal-overlay" id="soilModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('soilModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">🧪 मिट्टी परीक्षण</h2>
+    <p style="color:var(--text-sub);margin-bottom:20px">नजदीकी परीक्षण केंद्र खोजें या नमूना भेजें।</p>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>आपका जिला</label><input type="text" placeholder="जिले का नाम" /></div>
+      <div class="form-group"><label>पिनकोड</label><input type="text" placeholder="6 अंकों का पिनकोड" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('soilModal');showToast('✅ नजदीकी केंद्र मिला! SMS भेजा जा रहा है।')"><i class="fa fa-search"></i> केंद्र खोजें</button>
+    </div>
+  </div>
+</div>
+
+<!-- KCC Modal -->
+<div class="modal-overlay" id="kccModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('kccModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">💳 KCC आवेदन</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>बैंक का नाम</label><select><option>SBI</option><option>Punjab National Bank</option><option>Bank of Baroda</option><option>Canara Bank</option><option>ग्रामीण बैंक</option></select></div>
+      <div class="form-group"><label>ऋण राशि (₹)</label><input type="number" placeholder="अधिकतम 3,00,000" max="300000" /></div>
+      <div class="form-group"><label>जमीन के कागजात</label><input type="file" accept=".pdf,.jpg" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('kccModal');showToast('✅ KCC आवेदन जमा हो गया!')"><i class="fa fa-credit-card"></i> KCC आवेदन करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loan Apply Modal -->
+<div class="modal-overlay" id="loanApplyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('loanApplyModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">🏦 ऋण आवेदन</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="form-group"><label>ऋण का प्रकार</label><select><option>KCC (4%)</option><option>कृषि टर्म लोन</option><option>भूमि विकास ऋण</option><option>सूक्ष्म सिंचाई ऋण</option></select></div>
+      <div class="form-group"><label>बैंक</label><select><option>SBI</option><option>PNB</option><option>Bank of Baroda</option><option>NABARD</option></select></div>
+      <div class="form-group"><label>आपका नाम</label><input type="text" placeholder="पूरा नाम" /></div>
+      <div class="form-group"><label>मोबाइल</label><input type="tel" placeholder="+91 XXXXXXXXXX" /></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px" onclick="closeModal('loanApplyModal');showToast('✅ ऋण आवेदन सफलतापूर्वक भेजा गया!')"><i class="fa fa-paper-plane"></i> आवेदन करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Modal -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box" style="max-height:80vh;overflow-y:auto">
+    <button class="modal-close" onclick="closeModal('privacyModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">🔒 गोपनीयता नीति</h2>
+    <p style="color:var(--text-sub);line-height:1.8;font-size:0.92rem">KisanSeva Portal आपकी व्यक्तिगत जानकारी की पूरी सुरक्षा करता है। आपका डेटा केवल सरकारी योजनाओं के लाभ और कृषि सेवाओं के लिए उपयोग किया जाता है। किसी तृतीय पक्ष को बिना अनुमति के डेटा साझा नहीं किया जाता। अधिक जानकारी के लिए helpdesk@kisanseva.gov.in पर संपर्क करें।</p>
+    <button class="btn btn-primary" style="margin-top:20px" onclick="closeModal('privacyModal')">ठीक है</button>
+  </div>
+</div>
+
+<!-- Terms Modal -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box" style="max-height:80vh;overflow-y:auto">
+    <button class="modal-close" onclick="closeModal('termsModal')"><i class="fa fa-times"></i></button>
+    <h2 style="font-family:'Baloo 2';color:var(--green);font-size:1.6rem;margin-bottom:16px">📄 उपयोग की शर्तें</h2>
+    <p style="color:var(--text-sub);line-height:1.8;font-size:0.92rem">इस पोर्टल का उपयोग केवल किसानों और कृषि संबंधित कार्यों के लिए है। गलत जानकारी देने पर आवेदन रद्द हो सकता है। सरकारी योजनाओं की जानकारी की सत्यता के लिए संबंधित विभाग से पुष्टि करें। पोर्टल के नियम बिना पूर्व सूचना के बदले जा सकते हैं।</p>
+    <button class="btn btn-primary" style="margin-top:20px" onclick="closeModal('termsModal')">स्वीकार करें</button>
+  </div>
+</div>
+
+<!-- Scroll to Top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-arrow-up"></i></button>
+
+<script>
+// ===== THEME TOGGLE =====
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+let isDark = false;
+themeBtn.onclick = () => {
+  isDark = !isDark;
+  root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeBtn.innerHTML = isDark ? '<i class="fa fa-sun"></i>' : '<i class="fa fa-moon"></i>';
+};
+
+// ===== HAMBURGER =====
+document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.toggle('open');
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+// ===== HERO CAROUSEL =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dotsContainer = document.getElementById('heroDots');
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+});
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+  slides[currentSlide].querySelector('.hero-content').style.animation = 'none';
+  setTimeout(() => slides[currentSlide].querySelector('.hero-content').style.animation = 'fadeUp 0.7s ease both', 10);
+}
+function nextSlide() { goToSlide(currentSlide + 1); }
+function prevSlide() { goToSlide(currentSlide - 1); }
+setInterval(nextSlide, 5000);
+
+// ===== MANDI DATA =====
+const mandiData = [
+  {crop:'गेहूं',cat:'अनाज',mandi:'जयपुर',msp:2275,price:2215,change:'+45',qual:'A+'},
+  {crop:'धान',cat:'अनाज',mandi:'लखनऊ',msp:2183,price:1940,change:'+30',qual:'A'},
+  {crop:'मक्का',cat:'अनाज',mandi:'पटना',msp:2090,price:1780,change:'+15',qual:'B+'},
+  {crop:'चना',cat:'दलहन',mandi:'इंदौर',msp:5440,price:4950,change:'+80',qual:'A'},
+  {crop:'मूंग',cat:'दलहन',mandi:'जोधपुर',msp:8682,price:7200,change:'-120',qual:'A+'},
+  {crop:'अरहर',cat:'दलहन',mandi:'नागपुर',msp:7000,price:6800,change:'+200',qual:'A'},
+  {crop:'सरसों',cat:'तिलहन',mandi:'भरतपुर',msp:5650,price:5680,change:'+90',qual:'A+'},
+  {crop:'सोयाबीन',cat:'तिलहन',mandi:'उज्जैन',msp:4892,price:4820,change:'-60',qual:'B+'},
+  {crop:'प्याज',cat:'सब्जी',mandi:'नासिक',msp:'-',price:1250,change:'-150',qual:'A'},
+  {crop:'आलू',cat:'सब्जी',mandi:'आगरा',msp:'-',price:890,change:'+50',qual:'A'},
+  {crop:'टमाटर',cat:'सब्जी',mandi:'पुणे',msp:'-',price:1600,change:'+400',qual:'B+'},
+  {crop:'कपास',cat:'फल',mandi:'अहमदाबाद',msp:7020,price:6340,change:'+180',qual:'A'},
+];
+let currentFilter = 'सभी';
+function renderMandi(data) {
+  const tbody = document.getElementById('mandiBody');
+  tbody.innerHTML = data.map(r => {
+    const up = !r.change.startsWith('-');
+    return `<tr>
+      <td><strong>${r.crop}</strong></td>
+      <td>${r.cat}</td>
+      <td>${r.mandi}</td>
+      <td>₹${r.msp}</td>
+      <td class="${up?'price-up':'price-down'}">₹${r.price}</td>
+      <td><span class="price-badge ${up?'up':'down'}">${r.change}</span></td>
+      <td>${r.qual}</td>
+    </tr>`;
+  }).join('');
+}
+function filterMandi(cat, btn) {
+  document.querySelectorAll('.mandi-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = cat;
+  const filtered = cat === 'सभी' ? mandiData : mandiData.filter(r => r.cat === cat);
+  renderMandi(filtered);
+}
+renderMandi(mandiData);
+
+// ===== SCHEMES / TESTIMONIALS CAROUSEL =====
+function slideNext(trackId, itemWidth) {
+  const track = document.getElementById(trackId);
+  const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+  const current = parseInt(track.style.transform?.replace('translateX(','') || '0');
+  const next = Math.max(-maxScroll, current - itemWidth - 24);
+  track.style.transform = `translateX(${next}px)`;
+}
+function slidePrev(trackId) {
+  const track = document.getElementById(trackId);
+  const current = parseInt(track.style.transform?.replace('translateX(','') || '0');
+  const prev = Math.min(0, current + 400);
+  track.style.transform = `translateX(${prev}px)`;
+}
+
+// ===== LOAN CALCULATOR =====
+function calcLoan() {
+  const P = parseFloat(document.getElementById('loanAmt').value);
+  const r = parseFloat(document.getElementById('loanRate').value) / 12 / 100;
+  const n = parseInt(document.getElementById('loanTenure').value);
+  document.getElementById('loanAmtLabel').textContent = P.toLocaleString('hi-IN');
+  document.getElementById('rateLabel').textContent = document.getElementById('loanRate').value;
+  document.getElementById('tenureLabel').textContent = n;
+  const emi = r === 0 ? P/n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+  const total = emi * n;
+  const interest = total - P;
+  document.getElementById('emi').textContent = '₹' + Math.round(emi).toLocaleString('hi-IN');
+  document.getElementById('totalInt').textContent = '₹' + Math.round(interest).toLocaleString('hi-IN');
+  document.getElementById('totalPay').textContent = '₹' + Math.round(total).toLocaleString('hi-IN');
+  document.getElementById('tenureDisp').textContent = n + ' महीने';
+}
+calcLoan();
+
+// ===== REGISTRATION FORM =====
+function submitRegForm() {
+  document.getElementById('regFormCard').style.display = 'none';
+  document.getElementById('regSuccess').style.display = 'block';
+}
+function resetRegForm() {
+  document.getElementById('regFormCard').style.display = 'block';
+  document.getElementById('regSuccess').style.display = 'none';
+}
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(btn) {
+  const ans = btn.nextElementSibling;
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(q => q.classList.remove('open'));
+  if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+// ===== MODALS =====
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+});
+
+// ===== TOAST =====
+function showToast(msg) {
+  const old = document.querySelector('.toast');
+  if (old) old.remove();
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<i class="fa fa-check-circle"></i> ${msg}`;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+// ===== ADD TO CART =====
+function addToCart(item) { showToast(`🛒 "${item}" कार्ट में जोड़ा गया!`); }
+
+// ===== RENTAL BOOKING =====
+function bookRental(item) { openModal('consultModal'); showToast(`📅 ${item} की बुकिंग हो रही है...`); }
+
+// ===== SCROLL TO SECTION =====
+function scrollTo(hash) { document.querySelector(hash)?.scrollIntoView({behavior:'smooth'}); }
+
+// ===== SCROLL TO TOP =====
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  btn.classList.toggle('visible', window.scrollY > 400);
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+  });
+});
+
+// ===== COUNT UP ANIMATION =====
+function countUp() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count);
+    let current = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.round(current) + (target >= 100 ? '+' : '+');
+      if (current >= target) clearInterval(timer);
+    }, 25);
+  });
+}
+const statsObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) { countUp(); statsObserver.disconnect(); }
+}, {threshold: 0.3});
+statsObserver.observe(document.getElementById('stats'));
+
+// ===== KEYBOARD SUPPORT =====
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+});
+</script>
+</body>
+</html>
